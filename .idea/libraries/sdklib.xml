@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="sdklib">
+    <CLASSES>
+      <root url="file:///Applications/Android Studio.app/Contents/plugins/android/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file:///Applications/Android Studio.app/Contents/plugins/android/lib" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file:///Applications/Android Studio.app/Contents/plugins/android/lib" />
+    </SOURCES>
+    <jarDirectory url="file:///Applications/Android Studio.app/Contents/plugins/android/lib" recursive="false" />
+    <jarDirectory url="file:///Applications/Android Studio.app/Contents/plugins/android/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>

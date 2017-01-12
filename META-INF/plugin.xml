@@ -1,0 +1,52 @@
+<!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<idea-plugin version="2">
+  <id>com.sanyinchen</id>
+  <name>RNMenu</name>
+  <version>1.0</version>
+  <vendor email="sanyinchen@gmail.com" url=""></vendor>
+
+  <description><![CDATA[
+     This is a android plugin that you can invoke rn menu.<br>
+     Shortcut key : Ctrl+Shift+Z
+
+    ]]></description>
+
+  <change-notes><![CDATA[
+      First version.<br>
+      ]]>
+  </change-notes>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="145"/>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+
+  <depends>com.intellij.modules.lang</depends>
+
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="RNMenu.action" class="RNMenuAction" text="RNMenuItem" description="RNMenu">
+
+      <keyboard-shortcut keymap="Mac OS X" first-keystroke="shift ctrl Z"/>
+      <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="shift ctrl Z"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl Z"/>
+    </action>
+  </actions>
+
+</idea-plugin>
