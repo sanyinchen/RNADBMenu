@@ -3,12 +3,9 @@ package adb;/*
  */
 
 
-import com.android.ddmlib.IDevice;
-import com.google.common.collect.Iterables;
+
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.WindowManager;
-import org.jetbrains.android.sdk.AndroidSdkUtils;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
@@ -32,20 +29,22 @@ public class AdbFacade {
         EXECUTOR.submit(new Runnable() {
             @Override
             public void run() {
-                String androidSdkPath = AdbUtil.sdkPath(project.getBasePath() + "/local.properties");
+                String localProperties = project.getBasePath() + "/local.properties";
 
-                if (AdbUtil.isExists(androidSdkPath)) {
+                if (!AdbUtil.isFileExists(localProperties)) {
+                    error("local.properties not found");
+                    return;
+                }
+
+                String androidSdkPath = AdbUtil.sdkPath(localProperties);
+
+                if (AdbUtil.isDirExists(androidSdkPath)) {
                     androidSdkPath = androidSdkPath + "/platform-tools/";
                 } else {
-
-                    if (AndroidSdkUtils.getAndroidSdkPathsFromExistingPlatforms().size() > 0) {
-                        androidSdkPath = Iterables.get(AndroidSdkUtils.getAndroidSdkPathsFromExistingPlatforms(), 0);
-                        androidSdkPath = androidSdkPath + "/platform-tools/";
-                    } else {
-                        error("Android SDK path not found");
-                        return;
-                    }
+                    error("Android SDK path not found");
+                    return;
                 }
+
 
                 try {
                     //WindowManager.getInstance().getStatusBar(project).setInfo("adb kill-server...");

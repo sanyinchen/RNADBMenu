@@ -8,6 +8,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="sdklib-24.3.0" level="project" />
     <orderEntry type="library" name="sdklib" level="project" />
   </component>
 </module>

@@ -3,14 +3,8 @@
  */
 package adb;
 
-import android.text.TextUtils;
-import com.android.ddmlib.AdbCommandRejectedException;
-import com.android.ddmlib.IDevice;
-import com.android.ddmlib.ShellCommandUnresponsiveException;
-import com.android.ddmlib.TimeoutException;
 
-import org.jetbrains.android.facet.AndroidFacet;
-
+import org.apache.http.util.TextUtils;
 
 import java.io.*;
 import java.util.concurrent.TimeUnit;
@@ -44,7 +38,7 @@ public class AdbUtil {
         return null;
     }
 
-    public static boolean isExists(String path) {
+    public static boolean isDirExists(String path) {
         do {
 
             if (TextUtils.isEmpty(path)) {
@@ -60,6 +54,21 @@ public class AdbUtil {
         return false;
     }
 
+    public static boolean isFileExists(String path) {
+        do {
+
+            if (TextUtils.isEmpty(path)) {
+                break;
+            }
+            File file = new File(path);
+            if (file.exists() && file.isFile()) {
+                return true;
+            }
+
+        } while (false);
+
+        return false;
+    }
 
 
 }

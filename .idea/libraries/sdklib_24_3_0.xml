@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="sdklib">
+  <library name="sdklib-24.3.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/sdklib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sdklib-24.3.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
